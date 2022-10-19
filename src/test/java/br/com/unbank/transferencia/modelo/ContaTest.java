@@ -9,8 +9,8 @@ class ContaTest {
     @Test
     public void transferirValorMaiorQueOSaldoDeveRetornarFalso() {
         // Entrada
-        Conta contaDoNewton = new Conta();
-        Conta contaDoAndre = new Conta();
+        Conta contaDoNewton = new Conta("123");
+        Conta contaDoAndre = new Conta("456");
 
         // Processamento
         boolean resultadoDaTransferencia = contaDoNewton
@@ -23,8 +23,8 @@ class ContaTest {
     @Test
     public void transferirValorIgualAoSaldoDeveRetornarTrue() {
         // Entrada
-        Conta contaDoNewton = new Conta();
-        Conta contaDoAndre = new Conta();
+        Conta contaDoNewton = new Conta("123");
+        Conta contaDoAndre = new Conta("456");
 
         // Processamento
         boolean resultadoDaTransferencia = contaDoNewton
@@ -37,8 +37,8 @@ class ContaTest {
     @Test
     public void transferirValorMenorQueOSaldoDeveRetornarTrue() {
         // Entrada
-        Conta contaDoNewton = new Conta();
-        Conta contaDoAndre = new Conta();
+        Conta contaDoNewton = new Conta("123");
+        Conta contaDoAndre = new Conta("456");
 
         // Processamento
         boolean resultadoDaTransferencia = contaDoNewton
@@ -51,8 +51,8 @@ class ContaTest {
     @Test
     public void transferirValorIgualAZeroDeveRetornarTrue() {
         // Entrada
-        Conta contaDoNewton = new Conta();
-        Conta contaDoAndre = new Conta();
+        Conta contaDoNewton = new Conta("123");
+        Conta contaDoAndre = new Conta("456");
 
         // Processamento
         boolean resultadoDaTransferencia = contaDoNewton
@@ -65,8 +65,8 @@ class ContaTest {
     @Test
     public void transferirValorMenorQueZeroDeveRetornarFalse() {
         // Entrada
-        Conta contaDoNewton = new Conta();
-        Conta contaDoAndre = new Conta();
+        Conta contaDoNewton = new Conta("123");
+        Conta contaDoAndre = new Conta("456");
 
         // Processamento
         boolean resultadoDaTransferencia = contaDoNewton
@@ -79,8 +79,8 @@ class ContaTest {
     @Test
     public void transferirValorMenorQueSaldoDeveDimiuirOSaldoDaContaQueEstaTransferindo() {
         // Entrada
-        Conta contaDoNewton = new Conta();
-        Conta contaDoAndre = new Conta();
+        Conta contaDoNewton = new Conta("123");
+        Conta contaDoAndre = new Conta("456");
 
         // Processamento
         boolean resultadoDaTransferencia = contaDoNewton
@@ -93,8 +93,8 @@ class ContaTest {
     @Test
     public void transferirValorMenorQueSaldoDeveAumentarOSaldoDaContaQueEstaRecebendo() {
         // Entrada
-        Conta contaDoNewton = new Conta();
-        Conta contaDoAndre = new Conta();
+        Conta contaDoNewton = new Conta("123");
+        Conta contaDoAndre = new Conta("456");
 
         // Processamento
         boolean resultadoDaTransferencia = contaDoNewton
@@ -102,6 +102,15 @@ class ContaTest {
 
         // Verificar a saída
         assertEquals(160, contaDoAndre.getSaldo());
+    }
+
+    @Test
+    public void todaContaDeveTerUmNumero() {
+        // Entrada & processamento
+        Conta contaDoNewton = new Conta("123");
+
+        // Verificar a saída
+        assertEquals("123", contaDoNewton.getNumero());
     }
 
 }
